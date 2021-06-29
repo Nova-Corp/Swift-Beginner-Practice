@@ -30,7 +30,7 @@ studentsName.sort()    // 1.sorting an student array
 var alternateName1: [String] = [], alternateName2: [String] = []
 
 func splitAlternating(splitAlternate:[String]) {
-    // 2.split the array into by alternate element
+    // 2.split the array into 2 by alternate element
     for (index, value) in splitAlternate.enumerated() {     // We can access the index value of array element Using enumarated() keyword.
         if index % 2 == 0 {
             alternateName1.append(value)
@@ -47,5 +47,7 @@ alternateName1.removeFirst()
 alternateName2.removeFirst()
 // 4.join the splitted array
 let joinedArray = alternateName1 + alternateName2
-// 5.print the joined array
-print(joinedArray)
+// 5.print the joinedarray as string
+let string = joinedArray.joined(separator: " ")
+print(string)
+
