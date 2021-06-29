@@ -23,34 +23,29 @@
   Result: ccc eee ddd fff
 */
 import Foundation
-import Glibc
 
 var studentsName = ["Pavithra", "Archana", "zila","Dillipan","Kiran","Jayanthi","Vinothini","Naveena","Bharu","yamuna"]
-let indexValue = [0,1,2,3,4,5,6,7,8,9]
 studentsName.sort()    // 1.sorting an student array
 
-func splitAlternating(index: [Int], splitAlternate:[String]) {
-    var alternateName1: [String] = [], alternateName2: [String] = []    
+var alternateName1: [String] = [], alternateName2: [String] = []
 
-    alternateName1.reserveCapacity(splitAlternate.count / 2 + 1)
-    alternateName2.reserveCapacity(splitAlternate.count / 2)
+func splitAlternating(splitAlternate:[String]) {
     // 2.split the array into by alternate element
-    for iteration in index {
-        if iteration % 2 == 0 {
-            alternateName1.append(splitAlternate[iteration])
+    for (index, value) in splitAlternate.enumerated() {     // We can access the index value of array element Using enumarated() keyword.
+        if index % 2 == 0 {
+            alternateName1.append(value)
         }
         else {
-           alternateName2.append(splitAlternate[iteration])
+           alternateName2.append(value)
         }
-    
     }
-    // 3.remove the first element from both array
-    alternateName1.removeFirst()
-    alternateName2.removeFirst()
-    // 4.join the splitted array
-    let joinedArray = alternateName1 + alternateName2
-    // 5.print the joined array
-    print(joinedArray)
-
 }
-splitAlternating(index : indexValue , splitAlternate : studentsName)
+splitAlternating(splitAlternate : studentsName)
+
+// 3.remove the first element from both array
+alternateName1.removeFirst()
+alternateName2.removeFirst()
+// 4.join the splitted array
+let joinedArray = alternateName1 + alternateName2
+// 5.print the joined array
+print(joinedArray)
