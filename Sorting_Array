@@ -1,0 +1,6 @@
+import Foundation
+import Glibc
+
+var students_name = ["Pavithra", "shasmitha", "Archana", "kirthick","Dillipan","Kiran","Jayanthi","Vinothini","Naveena","Bharu"] //creating an string array
+var sorted_names = students_name.sorted() //sorting string array using sorted()
+print(sorted_names)
