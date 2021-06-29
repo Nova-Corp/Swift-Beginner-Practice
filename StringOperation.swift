@@ -25,17 +25,17 @@
 import Foundation
 import Glibc
 
-var students_name = ["Pavithra", "Archana", "zila","Dillipan","Kiran","Jayanthi","Vinothini","Naveena","Bharu","yamuna"]
-let index = [0,1,2,3,4,5,6,7,8,9]
-students_name.sort()    // 1.sorting an student array
+var studentsName = ["Pavithra", "Archana", "zila","Dillipan","Kiran","Jayanthi","Vinothini","Naveena","Bharu","yamuna"]
+let indexValue = [0,1,2,3,4,5,6,7,8,9]
+studentsName.sort()    // 1.sorting an student array
 
-func splitAlternating(Index: [Int], splitAlternate:[String]) {
+func splitAlternating(index: [Int], splitAlternate:[String]) {
     var alternateName1: [String] = [], alternateName2: [String] = []    
 
     alternateName1.reserveCapacity(splitAlternate.count / 2 + 1)
     alternateName2.reserveCapacity(splitAlternate.count / 2)
     // 2.split the array into by alternate element
-    for iteration in Index {
+    for iteration in index {
         if iteration % 2 == 0 {
             alternateName1.append(splitAlternate[iteration])
         }
@@ -48,9 +48,9 @@ func splitAlternating(Index: [Int], splitAlternate:[String]) {
     alternateName1.removeFirst()
     alternateName2.removeFirst()
     // 4.join the splitted array
-    let joined_array = alternateName1 + alternateName2
+    let joinedArray = alternateName1 + alternateName2
     // 5.print the joined array
-    print(joined_array)
+    print(joinedArray)
 
 }
-splitAlternating(Index : index , splitAlternate : students_name)
+splitAlternating(index : indexValue , splitAlternate : studentsName)
