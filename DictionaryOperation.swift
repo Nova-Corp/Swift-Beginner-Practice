@@ -67,20 +67,14 @@ var collegeName = [String]()
 var departmentName = [String]()
 //2.Extract the name, college, department as separate array
 studentDatabase.map{item in
-    if let studentNames = item["name"] {
-        if(studentNames != nil){
-            studentName.append(studentNames!)
-        }
+    if let studentNames = item["name"] as? String {
+        studentName.append(studentNames)
     }
-    if let collegeNames = item["college"] {
-        if(collegeNames != nil){
-            collegeName.append(collegeNames!)
-        }
+    if let collegeNames = item["college"] as? String {
+        collegeName.append(collegeNames)
     }
-    if let departmentNames = item["department"] {
-        if(departmentNames != nil){
-            departmentName.append(departmentNames!)
-        }
+    if let departmentNames = item["department"] as? String {
+        departmentName.append(departmentNames)
     }
     return;
 }
